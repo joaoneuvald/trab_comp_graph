@@ -10,15 +10,16 @@ def check_collision():
     global shots, enemies
     for shot in shots:
         shotRemoved = False
-        for line in enemies:
-            for enemy in line:
+        for i in range(2,  0, -1):
+            print(i)
+            for enemy in enemies[i]:
                 if enemy.alive:
                     if (shot.positionY >= enemy.positionY - 0.05 or shot.positionY <= enemy.positionY) and (shot.positionX >= enemy.positionX - 0.05 and shot.positionX <= enemy.positionX + 0.05):
                         enemy.alive = False
                         shots.remove(shot)
                         shotRemoved = True
                         break
-                # if abs(shot.positionY - enemy.positionY) < 0.05 and abs(shot.positionX - enemy.positionX) < 0.2:
+                # if abs(s hot.positionY - enemy.positionY) < 0.05 and abs(shot.positionX - enemy.positionX) < 0.2:
                 #     enemy.alive = False
                 #     shots.remove(shot)
             if shotRemoved:
@@ -58,7 +59,7 @@ def main():
 
     ship = Ship()
     enemy = Enemy(0,0)
-    shots = [Shot(ship.positionX, ship.shotOutY)]
+    shots = []
     lastShot = time.time()
 
     enemyDirection = Direction.RIGHT

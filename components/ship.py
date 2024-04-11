@@ -19,7 +19,7 @@ class Ship:
         elif direction == Direction.LEFT and self.positionX > -0.99:
             self.positionX -= self.moveSpeed
         self.center = self.positionX + 0.05
-        glTranslate(self.positionX, self.positionY, 0)
+        ##glTranslate(self.positionX, self.positionY, 0)
 
 
     def draw(self):
