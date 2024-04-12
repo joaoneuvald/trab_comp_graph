@@ -9,7 +9,7 @@ class Ship:
     def __init__(self):
         self.positionX = -0.05
         self.positionY = -0.95
-        self.moveSpeed = 0.001
+        self.moveSpeed = 0.01
         self.center = self.positionX + 0.05
         self.shotOutY = -0.9
 
@@ -19,7 +19,7 @@ class Ship:
         elif direction == Direction.LEFT and self.positionX > -0.99:
             self.positionX -= self.moveSpeed
         self.center = self.positionX + 0.05
-        ##glTranslate(self.positionX, self.positionY, 0)
+        glTranslate(self.positionX, self.positionY, 0)
 
 
     def draw(self):
